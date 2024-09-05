@@ -10,18 +10,18 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 60vh;
+            height: 100vh;
             margin: 0;
             background: linear-gradient(to bottom, #FFB6C1, #FFF0F5);
             font-family: 'Comic Sans MS', cursive;
             overflow: hidden;
-            
+            position: relative;
         }
 
         h1 {
             color: #ffffff;
-            font-size: 4em;
-            margin-bottom: 50px;
+            font-size: 10vw; /* Tamaño de fuente adaptable a la pantalla */
+            margin-bottom: 30px;
             text-align: center;
             position: relative;
         }
@@ -37,7 +37,8 @@
         }
 
         .bear-img {
-            width: 500px;
+            width: 80vw; /* La imagen del oso será el 80% del ancho de la pantalla */
+            max-width: 500px; /* Limitar el ancho máximo a 500px en pantallas grandes */
         }
 
         .floating-heart {
@@ -46,44 +47,46 @@
             font-size: 2em;
             animation: float 5s ease-in-out infinite;
         }
+
         /* Estilos del botón */
-.btn-music {
-    padding: 12px 24px;
-    font-size: 1.2em;
-    color: white;
-    background-color: #FF69B4;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s, transform 0.3s;
-    animation: pulse 2s infinite;
-}
+        .btn-music {
+            padding: 12px 24px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #FF69B4;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, transform 0.3s;
+            animation: pulse 2s infinite;
+            position: absolute;
+            bottom: 10px; /* Colocarlo en la parte inferior de la pantalla */
+        }
 
-.btn-music:hover {
-    background-color: #FF1493;
-    transform: scale(1.1);
-}
+        .btn-music:hover {
+            background-color: #FF1493;
+            transform: scale(1.1);
+        }
 
-.btn-music:active {
-    background-color: #FF69B4;
-    transform: scale(0.95);
-}
+        .btn-music:active {
+            background-color: #FF69B4;
+            transform: scale(0.95);
+        }
 
-/* Animación de pulso */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
+        /* Animación de pulso */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
 
         @keyframes float {
             0% {
@@ -102,48 +105,46 @@
 </head>
 <body>
 
-    
-
-    <h1>Te quiero   Lau <span class="heart">❤</span></h1>
+    <h1>Te quiero Lau <span class="heart">❤</span></h1>
     <div class="bear-container">
-        <img src="img/Dibujo_De_Oso-removebg-preview.png" class="bear-img">
-        
+        <img src="img/Dibujo_De_Oso-removebg-preview.png" class="bear-img" alt="Oso adorable">
     </div>
-    
-    <!-- Corazones flotantes -->
-     <body>     
-        <div class="floating-heart" style="top: 70%; left: 50%; animation-delay: 0s;">❤</div>
-        <div class="floating-heart" style="top: 75%; left: 60%; animation-delay: 1s;">❤</div>
-        <div class="floating-heart" style="top: 50%; left: 40%; animation-delay: 2s;">❤</div>
-        <div class="floating-heart" style="top: 75%; left: 60%; animation-delay: 3s;">❤</div>
-        <div class="floating-heart" style="top: 70%; left: 50%; animation-delay: 2s;">❤</div>
-        <div class="floating-heart" style="top: 75%; left: 35%; animation-delay: 3s;">❤</div>
-        <div class="floating-heart" style="top: 75%; left: 35%; animation-delay: 3s;">❤</div>
-        <div class="floating-heart" style="top: 70%; left: 50%; animation-delay: 2s;">❤</div>
-        <div class="floating-heart" style="top: 40%; left: 60%; animation-delay: 3s;">❤</div>
-        
-        <button class="btn-music" id="playBtn">Reproducir Música</button>
 
-        <audio id="myAudio" loop>
-            <source src="mp3/Julión Álvarez y su Norteño Banda - Regalo de Dios (Video Lyric).mp3" type="audio/mpeg">
-        </audio>
-    
-        <script>
-            const audio = document.getElementById('myAudio');
-            const playBtn = document.getElementById('playBtn');
-            let isPlaying = false;
-    
-            playBtn.addEventListener('click', function() {
-                if (isPlaying) {
-                    audio.pause();
-                    playBtn.textContent = 'Reproducir Música';
-                } else {
-                    audio.play();
-                    playBtn.textContent = 'Pausar Música';
-                }
-                isPlaying = !isPlaying;
-            });
-        </script>
-    </body>
+    <!-- Corazones flotantes -->
+    <div class="floating-heart" style="top: 70%; left: 50%; animation-delay: 0s;">❤</div>
+    <div class="floating-heart" style="top: 75%; left: 60%; animation-delay: 1s;">❤</div>
+    <div class="floating-heart" style="top: 50%; left: 40%; animation-delay: 2s;">❤</div>
+    <div class="floating-heart" style="top: 75%; left: 60%; animation-delay: 3s;">❤</div>
+    <div class="floating-heart" style="top: 70%; left: 50%; animation-delay: 2s;">❤</div>
+    <div class="floating-heart" style="top: 75%; left: 35%; animation-delay: 3s;">❤</div>
+    <div class="floating-heart" style="top: 75%; left: 35%; animation-delay: 3s;">❤</div>
+    <div class="floating-heart" style="top: 70%; left: 50%; animation-delay: 2s;">❤</div>
+    <div class="floating-heart" style="top: 40%; left: 60%; animation-delay: 3s;">❤</div>
+
+    <!-- Botón de reproducción de música -->
+    <button class="btn-music" id="playBtn">Reproducir Música</button>
+
+    <audio id="myAudio" loop>
+        <source src="mp3/Julión Álvarez y su Norteño Banda - Regalo de Dios (Video Lyric).mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const audio = document.getElementById('myAudio');
+        const playBtn = document.getElementById('playBtn');
+        let isPlaying = false;
+
+        playBtn.addEventListener('click', function() {
+            if (isPlaying) {
+                audio.pause();
+                playBtn.textContent = 'Reproducir Música';
+            } else {
+                audio.play();
+                playBtn.textContent = 'Pausar Música';
+            }
+            isPlaying = !isPlaying;
+        });
+    </script>
+</body>
+</html>
 
         
