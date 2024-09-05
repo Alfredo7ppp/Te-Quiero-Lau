@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te quiero Lau</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom, #14d0ff, #dd3ff6);
+            font-family: 'Comic Sans MS', cursive;
+            overflow: hidden;
+            
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 4em;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        .heart {
+            color: red;
+            font-size: 1.5em;
+        }
+
+        .bear-container {
+            position: relative;
+            text-align: center;
+        }
+
+        .bear-img {
+            width: 500px;
+        }
+
+        .floating-heart {
+            position: absolute;
+            color: rgb(251, 156, 205);
+            font-size: 2em;
+            animation: float 5s ease-in-out infinite;
+        }
+        /* Estilos del botón */
+.btn-music {
+    padding: 12px 24px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #FF69B4;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.3s;
+    animation: pulse 2s infinite;
+}
+
+.btn-music:hover {
+    background-color: #FF1493;
+    transform: scale(1.1);
+}
+
+.btn-music:active {
+    background-color: #FF69B4;
+    transform: scale(0.95);
+}
+
+/* Animación de pulso */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-200px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    
+
+    <h1>Te quiero   Lau <span class="heart">❤</span></h1>
+    <div class="bear-container">
+        <img src="img/Dibujo_De_Oso-removebg-preview.png" class="bear-img">
+        
+    </div>
+    
+    <!-- Corazones flotantes -->
+     <body>     
+        <div class="floating-heart" style="top: 70%; left: 50%; animation-delay: 0s;">❤</div>
+        <div class="floating-heart" style="top: 75%; left: 60%; animation-delay: 1s;">❤</div>
+        <div class="floating-heart" style="top: 50%; left: 40%; animation-delay: 2s;">❤</div>
+        <div class="floating-heart" style="top: 75%; left: 60%; animation-delay: 3s;">❤</div>
+        <div class="floating-heart" style="top: 70%; left: 50%; animation-delay: 2s;">❤</div>
+        <div class="floating-heart" style="top: 75%; left: 35%; animation-delay: 3s;">❤</div>
+        <div class="floating-heart" style="top: 75%; left: 35%; animation-delay: 3s;">❤</div>
+        <div class="floating-heart" style="top: 70%; left: 50%; animation-delay: 2s;">❤</div>
+        <div class="floating-heart" style="top: 40%; left: 60%; animation-delay: 3s;">❤</div>
+        
+        <button class="btn-music" id="playBtn">Reproducir Música</button>
+
+        <audio id="myAudio" loop>
+            <source src="mp3/Julión Álvarez y su Norteño Banda - Regalo de Dios (Video Lyric).mp3" type="audio/mpeg">
+        </audio>
+    
+        <script>
+            const audio = document.getElementById('myAudio');
+            const playBtn = document.getElementById('playBtn');
+            let isPlaying = false;
+    
+            playBtn.addEventListener('click', function() {
+                if (isPlaying) {
+                    audio.pause();
+                    playBtn.textContent = 'Reproducir Música';
+                } else {
+                    audio.play();
+                    playBtn.textContent = 'Pausar Música';
+                }
+                isPlaying = !isPlaying;
+            });
+        </script>
+    </body>
+
+        
